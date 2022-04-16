@@ -38,7 +38,7 @@ class Ui_ORWidget(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label.sizePolicy().hasHeightForWidth())
         self.label.setSizePolicy(sizePolicy)
-        self.label.setMinimumSize(QSize(384, 288))
+        self.label.setMinimumSize(QSize(1, 1))
         self.label.setCursor(QCursor(Qt.CrossCursor))
         self.label.setMouseTracking(True)
         self.label.setContextMenuPolicy(Qt.NoContextMenu)
@@ -160,12 +160,7 @@ class Ui_ORWidget(object):
 "p, li { white-space: pre-wrap; }\n"
 "hr { height: 1px; border-width: 0; }\n"
 "</style></head><body style=\" font-family:'Arial'; font-size:8pt; font-weight:700; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">x:</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">y:</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">r:</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">g:</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent"
-                        ":0; text-indent:0px;\">b:</p></body></html>", None))
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
         self.label_2.setText(QCoreApplication.translate("ORWidget", u"\u5927\u5c0f", None))
         self.undoButton.setText(QCoreApplication.translate("ORWidget", u"\u64a4\u9500", None))
         self.pushButton.setText(QCoreApplication.translate("ORWidget", u"\u53cd\u5411\u64a4\u9500", None))
