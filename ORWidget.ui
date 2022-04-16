@@ -40,8 +40,8 @@
    </property>
    <property name="minimumSize">
     <size>
-     <width>384</width>
-     <height>288</height>
+     <width>1</width>
+     <height>1</height>
     </size>
    </property>
    <property name="cursor">
@@ -63,7 +63,7 @@
      <x>670</x>
      <y>10</y>
      <width>81</width>
-     <height>161</height>
+     <height>151</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -174,7 +174,7 @@
    <property name="geometry">
     <rect>
      <x>670</x>
-     <y>180</y>
+     <y>170</y>
      <width>81</width>
      <height>91</height>
     </rect>
@@ -188,59 +188,23 @@
 p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial'; font-size:8pt; font-weight:700; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;x:&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;y:&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;r:&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;g:&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;b:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
-  </widget>
-  <widget class="QWidget" name="verticalLayoutWidget_2">
-   <property name="geometry">
-    <rect>
-     <x>670</x>
-     <y>360</y>
-     <width>31</width>
-     <height>171</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_2">
-    <item>
-     <widget class="QSlider" name="verticalSlider">
-      <property name="autoFillBackground">
-       <bool>false</bool>
-      </property>
-      <property name="maximum">
-       <number>50</number>
-      </property>
-      <property name="pageStep">
-       <number>3</number>
-      </property>
-      <property name="value">
-       <number>5</number>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="label_2">
-      <property name="text">
-       <string>大小</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
   </widget>
   <widget class="QPushButton" name="undoButton">
    <property name="geometry">
     <rect>
      <x>670</x>
-     <y>280</y>
+     <y>270</y>
      <width>75</width>
-     <height>24</height>
+     <height>23</height>
     </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="contextMenuPolicy">
     <enum>Qt::NoContextMenu</enum>
@@ -249,17 +213,80 @@ hr { height: 1px; border-width: 0; }
     <string>撤销</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="redoButton">
    <property name="geometry">
     <rect>
      <x>670</x>
-     <y>310</y>
-     <width>71</width>
-     <height>24</height>
+     <y>300</y>
+     <width>75</width>
+     <height>23</height>
     </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="text">
     <string>反向撤销</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="setPenColorButton">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>330</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="text">
+    <string>设置颜色</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="pen">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>370</y>
+     <width>10</width>
+     <height>10</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QSlider" name="verticalSlider">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>390</y>
+     <width>71</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="maximum">
+    <number>25</number>
+   </property>
+   <property name="pageStep">
+    <number>3</number>
+   </property>
+   <property name="value">
+    <number>5</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
    </property>
   </widget>
  </widget>
@@ -315,7 +342,7 @@ hr { height: 1px; border-width: 0; }
    </hints>
   </connection>
   <connection>
-   <sender>pushButton</sender>
+   <sender>redoButton</sender>
    <signal>clicked()</signal>
    <receiver>ORWidget</receiver>
    <slot>redo()</slot>
@@ -330,6 +357,38 @@ hr { height: 1px; border-width: 0; }
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>setPenColorButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ORWidget</receiver>
+   <slot>setPenColor()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>737</x>
+     <y>353</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>771</x>
+     <y>380</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>verticalSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ORWidget</receiver>
+   <slot>updatePen()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>686</x>
+     <y>460</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>759</x>
+     <y>460</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>cv2Imread()</slot>
@@ -337,6 +396,8 @@ hr { height: 1px; border-width: 0; }
   <slot>painter()</slot>
   <slot>undo()</slot>
   <slot>redo()</slot>
+  <slot>setPenColor()</slot>
+  <slot>updatePen()</slot>
  </slots>
  <buttongroups>
   <buttongroup name="buttonGroup">

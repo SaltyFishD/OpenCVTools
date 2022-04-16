@@ -38,13 +38,13 @@ class Ui_ORWidget(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label.sizePolicy().hasHeightForWidth())
         self.label.setSizePolicy(sizePolicy)
-        self.label.setMinimumSize(QSize(384, 288))
+        self.label.setMinimumSize(QSize(1, 1))
         self.label.setCursor(QCursor(Qt.CrossCursor))
         self.label.setMouseTracking(True)
         self.label.setContextMenuPolicy(Qt.NoContextMenu)
         self.verticalLayoutWidget = QWidget(ORWidget)
         self.verticalLayoutWidget.setObjectName(u"verticalLayoutWidget")
-        self.verticalLayoutWidget.setGeometry(QRect(670, 10, 81, 161))
+        self.verticalLayoutWidget.setGeometry(QRect(670, 10, 81, 151))
         self.verticalLayout = QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setSpacing(6)
         self.verticalLayout.setContentsMargins(11, 11, 11, 11)
@@ -105,44 +105,43 @@ class Ui_ORWidget(object):
 
         self.mouseInfo = QTextBrowser(ORWidget)
         self.mouseInfo.setObjectName(u"mouseInfo")
-        self.mouseInfo.setGeometry(QRect(670, 180, 81, 91))
+        self.mouseInfo.setGeometry(QRect(670, 170, 81, 91))
         self.mouseInfo.setMouseTracking(False)
-        self.verticalLayoutWidget_2 = QWidget(ORWidget)
-        self.verticalLayoutWidget_2.setObjectName(u"verticalLayoutWidget_2")
-        self.verticalLayoutWidget_2.setGeometry(QRect(670, 360, 31, 171))
-        self.verticalLayout_2 = QVBoxLayout(self.verticalLayoutWidget_2)
-        self.verticalLayout_2.setSpacing(6)
-        self.verticalLayout_2.setContentsMargins(11, 11, 11, 11)
-        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.verticalSlider = QSlider(self.verticalLayoutWidget_2)
-        self.verticalSlider.setObjectName(u"verticalSlider")
-        self.verticalSlider.setAutoFillBackground(False)
-        self.verticalSlider.setMaximum(50)
-        self.verticalSlider.setPageStep(3)
-        self.verticalSlider.setValue(5)
-        self.verticalSlider.setOrientation(Qt.Vertical)
-
-        self.verticalLayout_2.addWidget(self.verticalSlider)
-
-        self.label_2 = QLabel(self.verticalLayoutWidget_2)
-        self.label_2.setObjectName(u"label_2")
-
-        self.verticalLayout_2.addWidget(self.label_2)
-
         self.undoButton = QPushButton(ORWidget)
         self.undoButton.setObjectName(u"undoButton")
-        self.undoButton.setGeometry(QRect(670, 280, 75, 24))
+        self.undoButton.setGeometry(QRect(670, 270, 75, 23))
+        sizePolicy1.setHeightForWidth(self.undoButton.sizePolicy().hasHeightForWidth())
+        self.undoButton.setSizePolicy(sizePolicy1)
         self.undoButton.setContextMenuPolicy(Qt.NoContextMenu)
-        self.pushButton = QPushButton(ORWidget)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setGeometry(QRect(670, 310, 71, 24))
+        self.redoButton = QPushButton(ORWidget)
+        self.redoButton.setObjectName(u"redoButton")
+        self.redoButton.setGeometry(QRect(670, 300, 75, 23))
+        sizePolicy1.setHeightForWidth(self.redoButton.sizePolicy().hasHeightForWidth())
+        self.redoButton.setSizePolicy(sizePolicy1)
+        self.setPenColorButton = QPushButton(ORWidget)
+        self.setPenColorButton.setObjectName(u"setPenColorButton")
+        self.setPenColorButton.setGeometry(QRect(670, 330, 75, 23))
+        sizePolicy1.setHeightForWidth(self.setPenColorButton.sizePolicy().hasHeightForWidth())
+        self.setPenColorButton.setSizePolicy(sizePolicy1)
+        self.pen = QLabel(ORWidget)
+        self.pen.setObjectName(u"pen")
+        self.pen.setGeometry(QRect(700, 370, 10, 10))
+        self.verticalSlider = QSlider(ORWidget)
+        self.verticalSlider.setObjectName(u"verticalSlider")
+        self.verticalSlider.setGeometry(QRect(670, 390, 71, 22))
+        self.verticalSlider.setAutoFillBackground(False)
+        self.verticalSlider.setMaximum(25)
+        self.verticalSlider.setPageStep(3)
+        self.verticalSlider.setValue(5)
+        self.verticalSlider.setOrientation(Qt.Horizontal)
 
         self.retranslateUi(ORWidget)
         self.writeImageButton.clicked.connect(ORWidget.cv2Imwrite)
         self.readImageButton.clicked.connect(ORWidget.cv2Imread)
         self.undoButton.clicked.connect(ORWidget.undo)
-        self.pushButton.clicked.connect(ORWidget.redo)
+        self.redoButton.clicked.connect(ORWidget.redo)
+        self.setPenColorButton.clicked.connect(ORWidget.setPenColor)
+        self.verticalSlider.valueChanged.connect(ORWidget.updatePen)
 
         QMetaObject.connectSlotsByName(ORWidget)
     # setupUi
@@ -160,14 +159,10 @@ class Ui_ORWidget(object):
 "p, li { white-space: pre-wrap; }\n"
 "hr { height: 1px; border-width: 0; }\n"
 "</style></head><body style=\" font-family:'Arial'; font-size:8pt; font-weight:700; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">x:</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">y:</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">r:</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">g:</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent"
-                        ":0; text-indent:0px;\">b:</p></body></html>", None))
-        self.label_2.setText(QCoreApplication.translate("ORWidget", u"\u5927\u5c0f", None))
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
         self.undoButton.setText(QCoreApplication.translate("ORWidget", u"\u64a4\u9500", None))
-        self.pushButton.setText(QCoreApplication.translate("ORWidget", u"\u53cd\u5411\u64a4\u9500", None))
+        self.redoButton.setText(QCoreApplication.translate("ORWidget", u"\u53cd\u5411\u64a4\u9500", None))
+        self.setPenColorButton.setText(QCoreApplication.translate("ORWidget", u"\u8bbe\u7f6e\u989c\u8272", None))
+        self.pen.setText("")
     # retranslateUi
 
